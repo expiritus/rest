@@ -16,17 +16,17 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class UsersController extends Controller{
 
     /**
-     * @param $name
+     * @param $savestring
      * @View()
      */
-    public function getServerAction($name){
+
+    public function getServerAction($savestring){
         $user = new User();
         $em = $this->getDoctrine()->getManager();
-        $user->setUsername($name);
+        $user->setUsername($savestring);
         $em->persist($user);
         $em->flush();
         $id = $user->getId();
-        $us = $user->getUsername();
         return array('id' => $id);
     }
 }
