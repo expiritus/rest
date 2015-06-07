@@ -20,7 +20,6 @@ class AppKernel extends Kernel
             new Screenfony\DemoBundle\ScreenfonyDemoBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new FOS\RestBundle\FOSRestBundle(),
-            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
 
         );
 

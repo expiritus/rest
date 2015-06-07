@@ -26,6 +26,7 @@ class UsersController extends Controller{
         $em->persist($user);
         $em->flush();
         $id = $user->getId();
+        $us = $user->getUsername();
         return array('id' => $id);
     }
 }

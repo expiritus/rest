@@ -21,8 +21,7 @@
         "sensio/framework-extra-bundle": "~3.0,>=3.0.2",
         "sensiolabs/security-checker": "~2.0",
         "jms/serializer-bundle": "@stable",
-        "friendsofsymfony/rest-bundle": "@stable",
-        "doctrine/doctrine-fixtures-bundle": "dev-master"
+        "friendsofsymfony/rest-bundle": "@stable"
 
     },
     "require-dev": {
