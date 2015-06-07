@@ -16,25 +16,16 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 class UsersController extends Controller{
 
     /**
-     * @return array
+     * @param $name
      * @View()
      */
-    public function getUsersAction(){
-
-        $users = $this->getDoctrine()->getRepository('ScreenfonyDemoBundle:User')
-            ->findAll();
-
-        return array('users' => $users);
-    }
-
-    /**
-     * @param User $user
-     * @return array
-     * @View()
-     * @ParamConverter("user", class="ScreenfonyDemoBundle:User")
-     */
-    public function getUserAction(User $user){
-
-        return array('user' => $user);
+    public function getServerAction($name){
+        $user = new User();
+        $em = $this->getDoctrine()->getManager();
+        $user->setUsername($name);
+        $em->persist($user);
+        $em->flush();
+        $id = $user->getId();
+        return array('id' => $id);
     }
 }
